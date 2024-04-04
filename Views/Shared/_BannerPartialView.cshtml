@@ -1,0 +1,15 @@
+﻿@model List<Banner>
+<div class="banner">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="banner__pic">
+                        <img src="img/banner/@item.Image" alt="">
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+﻿@model Product
+<div class="row">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Create</h4>
+                <form method="post" asp-action="Create" class="forms-sample" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="exampleInputUsername1">Name</label>
+                        <input asp-for="Name" type="text" class="form-control" id="exampleInputUsername1" placeholder="Name">
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputUsername1">Price</label>
+                        <input asp-for="Price" type="number" step="0.01" class="form-control" id="exampleInputUsername1" placeholder="Price">
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputUsername1">Weight</label>
+                        <input asp-for="Weight" type="number" step="0.01" class="form-control" id="exampleInputUsername1" placeholder="Weight">
+                        <span asp-validation-for="Weight" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Stock status</label>
+                        <div>
+                            <input asp-for="InStock" type="radio" name="stock" value="true" class="form-check-input" id="inStockRadio" title="In stock">
+                            <label for="inStockRadio">In stock</label>
+                            <input asp-for="InStock" type="radio" name="stock" value="false" class="form-check-input" id="outOfOrderRadio" title="Out of order">
+                            <label for="outOfOrderRadio">Out of order</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="examp leInputUsername1">Description</label>
+                        <textarea asp-for="Description" class="form-control" style="height:200px;" id="exampleInputUsername1"></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Image</label>
+                        <input asp-for="Photo" class="form-control" id="exampleInputUsername1" />
+                        <span asp-validation-for="Photo" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Category</label>
+                       <select asp-for="CategoryId" asp-items="ViewBag.CategoryId" class="form-control" ></select>
+                    </div>
+                    <button type="submit" class="btn btn-primary me-2">Submit</button>
+                    <a class="btn btn-light" asp-action="Index">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

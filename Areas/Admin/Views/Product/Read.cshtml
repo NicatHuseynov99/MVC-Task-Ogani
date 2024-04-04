@@ -1,0 +1,46 @@
+﻿@model Product
+<div class="row">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Info</h4>
+                <div class="form-group">
+                    <label for="exampleInputUsername1">Name</label>
+                    <input asp-for="Name" disabled type="text" class="form-control" id="exampleInputUsername1" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputUsername1">Name</label>
+                    <input asp-for="Price"disabled type="text" class="form-control" id="exampleInputUsername1" placeholder="Price">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputUsername1">Stock status</label>
+                    @if (Model.InStock)
+                    {
+                        <p>In stock</p>
+                    }
+                    else
+                    {
+                        <p>Out of order</p>
+                    }
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputUsername1">Weight</label>
+                    <p>@Model.Weight kg</p>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputUsername1">Category</label>
+                    <p>@Model.Category.Name</p>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputUsername1">Description</label>
+                    <textarea asp-for="Description" disabled class="form-control" style="height:200px;"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Image</label><br />
+                    <img src="~/img/product/@Model.Image" style="height:60px;border-radius:50px;" />
+                </div>
+                <a class="btn btn-light" asp-action="Index">Cancel</a>
+            </div>
+        </div>
+    </div>
+</div>
